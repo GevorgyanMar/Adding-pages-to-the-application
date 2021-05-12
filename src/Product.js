@@ -18,9 +18,7 @@ const router = useHistory();
                     <p>{item.name}</p>
                     <button className="glow-on-hover" onClick={(()=>{
                         product.setCart([...product.cart,item]);
-                    })}>
-                        Add to cart
-                    </button>
+                    })}> Add to cart </button>
                 </div>
             )}
         </div>)

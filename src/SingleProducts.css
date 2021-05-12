@@ -4,6 +4,39 @@
     justify-content: center;
     align-items: center;
 }
+.MainSingleProduct{
+    width: 750px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+.productPrice .glow-on-hover{
+    margin-top: 68px;
+}
+.productImgage img{
+    width: 150px;
+    height: 150px;
+}
+.productColor{
+    width: 176px;
+    height: 29px;
+    border-radius: 3px;
+}
+.productPrice p{
+    font-size: 22px;
+    color: black;
+    font-weight: 600;
+}
+.productDescription span{
+    display: block;
+    margin: 25px 0 ;
+}
+.productDescription p{
+font-size: 22px;
+    color: black;
+
+}
 .Product-img button {
     max-width        : 160px;
     width            : 100%;

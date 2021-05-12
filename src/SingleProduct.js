@@ -1,13 +1,12 @@
 import  "./SingleProducts.css";
-
-import {useContext} from 'react';
+import React, {useContext} from 'react';
 import {useRouteMatch} from 'react-router-dom';
 import Context from "./Context";
 
 function SingleProduct () {
-    const data = useContext(Context).data;
+    const data = useContext(Context);
     const productId = useRouteMatch().params.id;
-    const product = data.find((item) => item.id === +productId);
+    const product = data.data.find((item) => item.id === +productId);
 return(
     <div className="MainProduct">
         <div key={product.id} className="MainSingleProduct">
@@ -17,13 +16,13 @@ return(
             <div className="productDescription">
                 <p>{product.name}</p>
                 <span>{product.description}</span>
-                <div>{product.color}</div>
+                <div className="productColor" style={{backgroundColor:product.color}}></div>
             </div>
             <div className="productPrice">
                 <p>{product.price}</p>
-                <button className="glow-on-hover">
-                    Add to cart
-                </button>
+                <button className="glow-on-hover" onClick={(()=>{
+                    data.setCart([...data.cart, product]);
+                })}> Add to cart </button>
             </div>
         </div>
     </div>
